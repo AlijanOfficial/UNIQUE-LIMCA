@@ -31,21 +31,41 @@ const IMG = {
    WhatsApp pe poochega. Price pata ho to number likh do (jaise 250).
    popular: true wali items home page pe "Popular" mein aati hain. */
 const MENU = [
-  { id: "chest-big-broast", cat: "Broast", name: "Chest Big Broast", desc: "Crispy, juicy half-chest broast fried golden.", price: 450, img: "broast", popular: true },
-  { id: "broast-leg-piece", cat: "Broast", name: "Broast Leg Piece", desc: "Single leg piece, crispy outside and juicy inside.", price: null, img: "broast" },
+  { id: "chest-big-broast", cat: "Broast", name: "Chest Big Broast", desc: "Crispy, juicy half-chest broast fried golden.", price: 450, popular: true },
+  { id: "broast-leg-piece", cat: "Broast", name: "Broast Leg Piece", desc: "Single leg piece, crispy outside and juicy inside.", price: null },
 
-  { id: "zinger-burger", cat: "Burgers", name: "Zinger Burger", desc: "Crispy zinger fillet with lettuce and signature sauce.", price: 350, img: "burger", popular: true },
-  { id: "zinger-cheez-burger", cat: "Burgers", name: "Zinger Cheez Burger", desc: "Zinger fillet with melted cheese and crunchy lettuce.", price: 500, img: "burger", popular: true },
-  { id: "crispy-chicken-burger", cat: "Burgers", name: "Crispy Chicken Burger", desc: "Crispy chicken patty, fresh lettuce and sauce.", price: null, img: "burger" },
+  { id: "zinger-burger", cat: "Burgers", name: "Zinger Burger", desc: "Crispy zinger fillet with lettuce and signature sauce.", price: 350, popular: true },
+  { id: "zinger-cheez-burger", cat: "Burgers", name: "Zinger Cheez Burger", desc: "Zinger fillet with melted cheese and crunchy lettuce.", price: 500, popular: true },
+  { id: "crispy-chicken-burger", cat: "Burgers", name: "Crispy Chicken Burger", desc: "Crispy chicken patty, fresh lettuce and sauce.", price: null },
 
-  { id: "fries", cat: "Sides", name: "Fries", desc: "Crispy golden fries, salted and served hot.", price: 200, img: "fries", popular: true },
+  { id: "fries", cat: "Sides", name: "Fries", desc: "Crispy golden fries, salted and served hot.", price: 200, popular: true },
 
-  { id: "unique-limca", cat: "Drinks", name: "Unique Limca", desc: "Our signature sparkling lemon-lime soda, served chilled.", price: 150, img: "limca", popular: true },
-  { id: "milk-soda", cat: "Drinks", name: "Milk Soda", desc: "Creamy, fizzy milk soda, served ice cold.", price: null, img: "limca" },
-  { id: "fresh-juice", cat: "Drinks", name: "Fresh Juice", desc: "Fresh fruit juice, made when you order.", price: null, img: null },
+  { id: "unique-limca", cat: "Drinks", name: "Unique Limca", desc: "Our signature sparkling lemon-lime soda, served chilled.", price: 150, popular: true },
+  { id: "milk-soda", cat: "Drinks", name: "Milk Soda", desc: "Creamy, fizzy milk soda, served ice cold.", price: null },
+  { id: "fresh-juice", cat: "Drinks", name: "Fresh Juice", desc: "Fresh fruit juice, made when you order.", price: null },
 
-  { id: "falooda", cat: "Desserts", name: "Falooda", desc: "Layered rose falooda with vermicelli and ice cream.", price: 400, img: null, popular: true },
-  { id: "ice-cream", cat: "Desserts", name: "Ice Cream", desc: "Cold, creamy ice cream.", price: null, img: null }
+  { id: "falooda", cat: "Desserts", name: "Falooda", desc: "Layered rose falooda with vermicelli and ice cream.", price: 400, popular: true },
+  { id: "ice-cream", cat: "Desserts", name: "Ice Cream", desc: "Cold, creamy ice cream.", price: null }
+];
+
+/* Har menu item ki photo yahan se aati hai:
+     images/<folder>/<item-id>.jpg   <- tumhari apni photo (agar daali ho)
+     images/<folder>/<item-id>.svg   <- warna ye drawing dikhti hai
+   Apni photo lagane ke liye bas wahi naam rakh ke .jpg file us folder mein daal do. */
+const FOLDER = { Broast: "broast", Burgers: "burgers", Sides: "sides", Drinks: "drinks", Desserts: "desserts" };
+MENU.forEach(function (m) {
+  const base = "images/" + FOLDER[m.cat] + "/" + m.id;
+  m.srcs = [base + ".jpg", base + ".svg"];
+});
+
+/* Home page ka slideshow banner. Photo lagani ho to images/banner/ mein
+   slide-1.jpg, slide-2.jpg, slide-3.jpg, slide-4.jpg daal do. Aur slide chahiye
+   to neeche ek block copy karke add kar do. */
+const BANNER = [
+  { title: "Taste Jo Unique Hai", text: "Crispy broast, juicy burgers, cold Limca and creamy milk soda, all in one place.", button: "See the full menu", link: "menu.html", bg: "#0e3b2c", alt: "Crispy fried broast", images: ["images/banner/slide-1.jpg", "images/banner/slide-1.svg"] },
+  { title: "Zinger burgers, made to order", text: "Crispy zinger fillet, melted cheese and our signature sauce.", button: "Order a burger", link: "menu.html#cat-burgers", bg: "#7a2314", alt: "Zinger cheese burger", images: ["images/banner/slide-2.jpg", "images/banner/slide-2.svg"] },
+  { title: "Ice-cold Limca and milk soda", text: "Served chilled, with fries on the side.", button: "See the drinks", link: "menu.html#cat-drinks", bg: "#16513c", alt: "Chilled Limca soda", images: ["images/banner/slide-3.jpg", "images/banner/slide-3.svg"] },
+  { title: "Falooda and ice cream", text: "Finish with something sweet.", button: "See the desserts", link: "menu.html#cat-desserts", bg: "#5a1d3a", alt: "Falooda with ice cream", images: ["images/banner/slide-4.jpg", "images/banner/slide-4.svg"] }
 ];
 
 /* Deals. Naam (title) apni marzi se badal sakte ho. */

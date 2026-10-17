@@ -12,6 +12,16 @@
   };
 
   function fillImages() {
+    /* data-srcs: pehli photo try hoti hai, na mile to agli (drawing) */
+    document.querySelectorAll("img[data-srcs]").forEach(function (img) {
+      const list = img.dataset.srcs.split("|");
+      let i = 0;
+      img.addEventListener("error", function () {
+        i += 1;
+        if (i < list.length) { img.src = list[i]; } else { img.style.display = "none"; }
+      });
+      img.src = list[0];
+    });
     document.querySelectorAll("img[data-img]").forEach(function (img) {
       const url = IMG[img.dataset.img];
       if (!url) { img.style.display = "none"; return; }
@@ -21,9 +31,7 @@
   }
 
   function menuRow(m) {
-    const thumb = m.img
-      ? '<img data-img="' + m.img + '" alt="' + esc(m.name) + '" loading="lazy">'
-      : "<span>" + esc(m.name.charAt(0)) + "</span>";
+    const thumb = '<img data-srcs="' + m.srcs.join("|") + '" alt="' + esc(m.name) + '" loading="lazy">';
     const price = m.price === null ? '<span class="ask">Ask price</span>' : rs(m.price);
     const action = m.price === null
       ? '<a class="btn btn-ghost" href="' + askLink(m.name) + '" target="_blank" rel="noopener">Ask on WhatsApp</a>'
