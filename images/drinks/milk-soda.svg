@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Milk soda">
+<ellipse cx="200" cy="262" rx="85" ry="10" fill="#000" opacity=".12"/><rect x="236" y="30" width="12" height="90" rx="6" fill="#16513C" transform="rotate(14 242 75)"/><path d="M138 110 H262 L246 255 H154Z" fill="#fff" stroke="#E6DCC3" stroke-width="3"/><path d="M144 140 H256 L246 255 H154Z" fill="#FFD3DE"/><circle cx="178" cy="185" r="7" fill="#fff"/><circle cx="220" cy="210" r="6" fill="#fff"/><circle cx="205" cy="162" r="5" fill="#fff"/><circle cx="235" cy="180" r="4" fill="#fff"/><rect x="130" y="98" width="140" height="16" rx="8" fill="#D7402B"/>
+</svg>

@@ -20,7 +20,7 @@ Static website (sirf HTML, CSS, JavaScript). Kisi build ya install ki zarurat na
     │   ├── cart.js       Order cart + WhatsApp message
     │   ├── layout.js     Header, footer, cart drawer
     │   └── pages.js      Har page ka content
-    └── images/
+    └── images/  (burgers, broast, sides, drinks, desserts, banner folders + logo)
         ├── logo.svg
         ├── favicon.svg
         └── README.md
